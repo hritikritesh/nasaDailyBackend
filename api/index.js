@@ -28,7 +28,9 @@ const User = new mongoose.model("User", userSchema)
 
 // Routes
 app.post("/login", (req,res) => {
+    console.log("login request")
     const {email, password} = req.body
+    console.log(email)
     User.findOne({email : email})
     .then((user) => {
         if(user){
