@@ -28,9 +28,7 @@ const User = new mongoose.model("User", userSchema)
 
 // Routes
 app.post("/login", (req,res) => {
-    console.log("login request")
     const {email, password} = req.body
-    console.log(email)
     User.findOne({email : email})
     .then((user) => {
         if(user){
@@ -77,17 +75,5 @@ app.post("/register", (req,res) => {
         console.log(err)
     })
 })
-
-app.get('/api', (req, res) => {
-  const path = `/api/item/${vv4}`;
-  res.setHeader('Content-Type', 'text/html');
-  res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-  res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
-});
-
-app.get('/api/item/:slug', (req, res) => {
-  const { slug } = req.params;
-  res.end(`Item: ${slug}`);
-});
 
 module.exports = app;
