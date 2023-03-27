@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
 
-const DB = "mongodb+srv://hritikritesh:loginRegister@cluster0.a2x6upm.mongodb.net/myLoginRegisterdb?retryWrites=true&w=majority"
+const DB = process.env.MONGO_URI
 
 mongoose.connect(DB, {
     useNewUrlParser: true,
