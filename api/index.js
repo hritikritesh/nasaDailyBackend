@@ -1,9 +1,6 @@
 import express from "express"
-import {v4} from "uuid"
 import cors from "cors"
 import mongoose from "mongoose"
-
-const vv4 = v4();
 
 const app = express()
 app.use(express.json())
