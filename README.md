@@ -1,15 +1,17 @@
-# Backend of SPA for NASA APOD API
+# Serverless backend for user management
 
 ## Introduction 
 
-User have to register and then user can login to see NASA Astronomical Picture Of the Day.
-User can also sign in with google.
+Supports two types of request:
+1. Login: It validate user information from backend database.
+2. Register: It creates new user information in backend database.
 
 ## Tools Used
 
-1. Express is used to manage servers and routes.
+1. Express is used to handle api requests.
 2. Cors for frontend requests.
-3. Mongoose for cennecting with MongoDB and performing operations in database.
+3. Mongoose for connecting with MongoDB and performing operations in database.
+4. MongoDB Atlas is used for backend database.
 
 ## How to deploy on vercel
 
@@ -19,4 +21,7 @@ User can also sign in with google.
 4. If repository is not in list give vercel access to the particular repository.
 5. During deployment select framework preset as "Other"
 6. Leave root directory as it is.
-7. Deploy !!
+7. Supply the environment variable MONGO_URI as your MongoDB URI
+8. Deploy !!
+9. Create integration with MongoDB: https://vercel.com/integrations/mongodbatlas
+10. Redeploy
